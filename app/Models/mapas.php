@@ -20,7 +20,6 @@ class mapas extends Model
         'vagas',
         'passo1',
         'login',
-        'cpf',
-
+        
       ];
 }

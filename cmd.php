@@ -1,6 +1,4 @@
-Arrumar a parte dos usuários editar quando buscar a macro buscar somente os
-hospais daquela macro.
-
+Deletar o CPF da tabela mapas no banco de dados 
 
 php artisan migrate:reset
 
