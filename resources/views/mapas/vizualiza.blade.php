@@ -4,6 +4,7 @@ use App\Http\Controllers\MapasController;
 use App\Models\incluir_mapa_p2;
 
 
+
 $tabela = mapas::all(); 
 $itensP = mapas::where('id',$id)->get(); 
 
@@ -13,6 +14,10 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
 
 
 ?>
+
+
+<?php $hospUsr=Auth::user()->categorias_id; ?> 
+
 
 <form>
    <input type="button" value="Imprimir" onClick="window.print()" />
@@ -65,6 +70,23 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
       <td><b>Id do Mapa:</b>{{$t->id }} <br>
           <b>Macro:</b>{{$t->macro }}<br>
            <b>Hospital: </b> {{$t->categoria_id }}<br>
+
+            <?php $hosptb=$t->categoria_id; ?>
+           <?php $hospUsr=Auth::user()->categorias_id; 
+           
+                  if($hosptb==$hospUsr){
+
+
+                  }else{
+                   session()->flush();
+
+                  }
+           
+           
+           
+           ?> 
+
+
            <b>Nome do Mapa:</b>{{$t->nome }}<br>
            <b>Descrição:</b>{{$t->descricao }}<br>
      <b>Especialidade: </b> {{$t->especialidade }}<br>
