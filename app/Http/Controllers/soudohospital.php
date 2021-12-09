@@ -18,7 +18,6 @@ class soudohospital extends Controller
          $this->middleware('permission:Hospital-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:Hospital-delete', ['only' => ['destroy']]);
     }
-
     public function index(Request $request)
    
     {   

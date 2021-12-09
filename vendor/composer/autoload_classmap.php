@@ -34,6 +34,7 @@ return array(
     'App\\Http\\Controllers\\categoriaMapas' => $baseDir . '/app/Http/Controllers/categoriaMapas.php',
     'App\\Http\\Controllers\\contarController' => $baseDir . '/app/Http/Controllers/contarController.php',
     'App\\Http\\Controllers\\macro' => $baseDir . '/app/Http/Controllers/macro.php',
+    'App\\Http\\Controllers\\mapaHospitalp2Controller' => $baseDir . '/app/Http/Controllers/mapaHospitalp2Controller.php',
     'App\\Http\\Controllers\\mapasRegController' => $baseDir . '/app/Http/Controllers/mapasRegController.php',
     'App\\Http\\Controllers\\obsMapaP2sController' => $baseDir . '/app/Http/Controllers/obsMapaP2sController.php',
     'App\\Http\\Controllers\\soudohospital' => $baseDir . '/app/Http/Controllers/soudohospital.php',
