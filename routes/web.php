@@ -18,6 +18,8 @@ use App\Http\Controllers\contarController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\MedicoReguladorController;
 use App\Http\Controllers\obsMapaP2sController;
+use App\Http\Controllers\mapahospitalController;
+
 
 
 
@@ -53,6 +55,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('municipio', MunicipioController::class);
     Route::resource('regulador', MedicoReguladorController::class);
     Route::resource('observacao', obsMapaP2sController::class);
+    Route::resource('mapahosp', mapahospitalController::class);
+
+
+    
+
+
 
 
     Route::get('munipac', 'App\Http\Controllers\MunicipioController@paciente');

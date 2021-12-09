@@ -128,10 +128,6 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
 </table>
 
 
-
-
-
-
 <table class="table table-bordered">
   <tbody>
     <tr>
@@ -147,6 +143,9 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
     <b> Nome do Usuário: </b> {{$t2->nomeUsuario}}<br>
     <b> CPF do Usuário:</b> {{$t2->cpfUsuarioSistema}}<br>
     <b> Macro:</b> {{$t->macro}}<br>
+
+    
+    <b><a class="btn btn-info" href="{{ url('mapahosp') }}">Inserir observação</a>
 
 
   </td>
