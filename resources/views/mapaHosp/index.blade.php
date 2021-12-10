@@ -1,8 +1,12 @@
-@extends('layouts2.app')
+@extends('limpo.app')
 @section('content')
     	    
+<?php 
 
-        <?php echo "teste"; ?> 
+
+echo $id;
+?>
+
 
 
 

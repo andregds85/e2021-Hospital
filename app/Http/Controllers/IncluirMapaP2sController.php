@@ -13,10 +13,10 @@ class IncluirMapaP2sController extends Controller
 
     function __construct()
     {
-         $this->middleware('permission:mapas-list|mapas-create|mapas-edit|mapas-delete', ['only' => ['index','show']]);
-         $this->middleware('permission:mapas-create', ['only' => ['create','store']]);
-         $this->middleware('permission:mapas-edit', ['only' => ['edit','update']]);
-         $this->middleware('permission:mapas-delete', ['only' => ['destroy']]);
+         $this->middleware('permission:Hospital-list|Hospital-create|Hospital-edit|Hospital-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:Hospital-create', ['only' => ['create','store']]);
+         $this->middleware('permission:Hospital-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:Hospital-delete', ['only' => ['destroy']]);
     }
      public function index()
     {

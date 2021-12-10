@@ -11,11 +11,13 @@ class Import_Export_Controller extends Controller
 {
     function __construct()
     {
-         $this->middleware('permission:administrador-list|administrador-create|administrador-edit|administrador-delete', ['only' => ['index','store']]);
-         $this->middleware('permission:administrador-create', ['only' => ['create','store']]);
-         $this->middleware('permission:administrador-edit', ['only' => ['edit','update']]);
-         $this->middleware('permission:administrador-delete', ['only' => ['destroy']]);
+         $this->middleware('permission:Hospital-list|Hospital-create|Hospital-edit|Hospital-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:Hospital-create', ['only' => ['create','store']]);
+         $this->middleware('permission:Hospital-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:Hospital-delete', ['only' => ['destroy']]);
     }
+
+
     public function importExport()
     {
        return view('import');

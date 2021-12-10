@@ -144,9 +144,9 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
     <b> CPF do Usuário:</b> {{$t2->cpfUsuarioSistema}}<br>
     <b> Macro:</b> {{$t->macro}}<br>
 
-    
-    <b><a class="btn btn-info" href="{{ url('mapahosp') }}">Inserir observação</a>
 
+                    
+    <a class="btn btn-info" href="{{ url('mapahosp',$t2->id) }}">Inserir observação</a>              
 
   </td>
     </tr>

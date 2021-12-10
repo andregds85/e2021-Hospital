@@ -13,15 +13,13 @@ class HospitalController extends Controller
 {
 
 
-
     function __construct()
     {
-         $this->middleware('permission:regulacao-list|regulacao-create|regulacao-edit|regulacao-delete', ['only' => ['index','show','__invoke']]);
-         $this->middleware('permission:regulacao-create', ['only' => ['create','store']]);
-         $this->middleware('permission:regulacao-edit', ['only' => ['edit','update']]);
-         $this->middleware('permission:regulacao-delete', ['only' => ['destroy']]);
+         $this->middleware('permission:Hospital-list|Hospital-create|Hospital-edit|Hospital-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:Hospital-create', ['only' => ['create','store']]);
+         $this->middleware('permission:Hospital-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:Hospital-delete', ['only' => ['destroy']]);
     }
-
 
 
     public function index()

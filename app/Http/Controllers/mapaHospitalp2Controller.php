@@ -19,6 +19,8 @@ class mapaHospitalp2Controller extends Controller
      public function index()
     {
         return view('contar.index');
+
+        
     }
       public function show($id)
     {
