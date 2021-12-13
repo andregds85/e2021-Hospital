@@ -16,22 +16,23 @@ class mapaHospitalp2Controller extends Controller
          $this->middleware('permission:Hospital-delete', ['only' => ['destroy']]);
     }
 
-     public function index()
-    {
-        return view('contar.index');
 
-        
+    public function index()
+    {
+        return view('contar.index'); 
     }
       public function show($id)
     {
-    
         /*
         return view('contar.Excluir',['id'=>$id]);
         */
-    
-    }
+     }
   
-    
+   
+     
+
+
+
     
 }
 
