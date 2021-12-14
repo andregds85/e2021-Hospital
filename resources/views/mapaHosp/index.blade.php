@@ -2,6 +2,18 @@
 @section('content')
 <?php 
 $id;
+
+use App\Models\mapahospital;
+use App\Http\Controllers\mapahospitalController;
+
+$tabelap3 = mapahospital::all();              
+$itensP = mapahospital::where('idp3',$id)->count();
+       
+if ($itensP > 0){
+    session()->flush(); 
+
+}
+
 ?>
 
 <div class="container">
@@ -21,7 +33,8 @@ $id;
                         </div>
                         </div>
 
-                        
+                          
+
     
     <div class="container">
     <div class="row justify-content-center">
@@ -62,9 +75,6 @@ $id;
  
 
 
-
-
-
                      <!--  Data prevista para cirurgia  -->
                        <div class="form-group row">
                             <label for="descricao" class="col-md-4 col-form-label text-md-right">{{ __('Data prevista para Cirurgia') }}</label>
@@ -79,6 +89,7 @@ $id;
                            </div>
 
        
+
                                           
                     <!--  obsHospital -->
                     <div class="form-group row">
@@ -99,14 +110,7 @@ $id;
                               <option value='10. Paciente com indicação de UTI'> 10. Paciente com indicação de UTI</option>
                               <option value='11. Paciente aguardando avaliação de outra especialidade'> 11. Paciente aguardando avaliação de outra especialidade</option>
                               <option value='12. Paciente não compareceu na data agendada da cirurgia'> 12. Paciente não compareceu na data agendada da cirurgia</option>
-
-
-
-
-
-
-
-                    
+               
                            
                            
                            
