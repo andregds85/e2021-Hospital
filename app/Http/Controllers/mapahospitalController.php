@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\mapahospital;
 
 
+
 class mapahospitalController extends Controller
 {
   function __construct()
@@ -31,11 +32,13 @@ class mapahospitalController extends Controller
              ]);
  
              mapahospital::create($request->all());
-             return redirect()->route();
+            echo  "<script>
+            alert( 'Sucesso, Cadastro inserido !' );
+                 </script>";
+
+             return view('home');
+             
  
           }
-  
-
-
 
     }

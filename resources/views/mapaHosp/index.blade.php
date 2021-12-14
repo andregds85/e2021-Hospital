@@ -46,13 +46,11 @@ $id;
                        </div>           
 
              
-
-
                  <!-- prontuarioHospital -->
                      <div class="form-group row">
-                            <label for="prontuarioHospital" class="col-md-4 col-form-label text-md-right">{{ __('ID do Mapa ') }}</label>
+                            <label for="prontuarioHospital" class="col-md-4 col-form-label text-md-right">{{ __('Número do Prontuario Hospital ') }}</label>
                             <div class="col-md-6">
-                            <input id="prontuarioHospital" type="text" class="form-control @error('idp3') is-invalid @enderror" name="prontuarioHospital"  value="<?php echo $id; ?>" required autocomplete="prontuarioHospital" >
+                            <input id="prontuarioHospital" type="text" class="form-control @error('idp3') is-invalid @enderror" name="prontuarioHospital"  value="" required autocomplete="prontuarioHospital" >
                                 @error('prontuarioHospital')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -87,8 +85,32 @@ $id;
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('Observação do Hospital') }}</label>
                             <div class="col-md-6">
                             <select class="form-control" name="obsHospital" id="obsHospital">
-                              <option value='confirmado' >confirmado</option>
-                              </select>     
+                            <option value='' ></option>
+
+                              <option value='1. Aguarda cirurgia' >1. Aguarda cirurgia</option>
+                              <option value='2. Já realizou no SUS' >2. Já realizou no SUS</option>
+                              <option value='3. Já realizou particular' >3. Já realizou particular</option>
+                              <option value='4. Não deseja mais realizar'> 4. Não deseja mais realizar</option>
+                              <option value='5. Contra-indicado o procedimento'> 5. Contra-indicado o procedimento</option>
+                              <option value='6. Sem contato'> 6. Sem contato</option>
+                              <option value='7. Não localizado'> 7. Não localizado</option>
+                              <option value='8. Óbito'> 8. Óbito</option>
+                              <option value='9. Termo de desistência assinado'> 9. Termo de desistência assinado</option>
+                              <option value='10. Paciente com indicação de UTI'> 10. Paciente com indicação de UTI</option>
+                              <option value='11. Paciente aguardando avaliação de outra especialidade'> 11. Paciente aguardando avaliação de outra especialidade</option>
+                              <option value='12. Paciente não compareceu na data agendada da cirurgia'> 12. Paciente não compareceu na data agendada da cirurgia</option>
+
+
+
+
+
+
+
+                    
+                           
+                           
+                           
+                            </select>     
                                 @error('obsHospital')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -98,15 +120,18 @@ $id;
                            </div>
          
                          
-                           
+                         
                            
                    <!--  realizou -->
                     <div class="form-group row">
                             <label for="realizou" class="col-md-4 col-form-label text-md-right">{{ __('Realizou ') }}</label>
                             <div class="col-md-6">
                             <select class="form-control" name="realizou" id="realizou">
-                              <option value='confirmado' >confirmado</option>
-                              </select>     
+                            <option value='' ></option>
+                              <option value='Sim' >Sim</option>
+                              <option value='Não' >Não</option>
+                         
+                            </select>     
                                 @error('realizou')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
