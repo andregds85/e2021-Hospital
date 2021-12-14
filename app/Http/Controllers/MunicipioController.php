@@ -16,7 +16,6 @@ class MunicipioController extends Controller
          $this->middleware('permission:municipio-delete', ['only' => ['destroy']]);
     }
     
-
     public function index()
     {
        return view('municipio.index');
@@ -46,6 +45,7 @@ class MunicipioController extends Controller
 
          }
     
+
 }
 
 

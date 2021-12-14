@@ -1,7 +1,14 @@
 <?php 
 use App\Models\mapas;
 use App\Http\Controllers\MapasController;
+use App\Http\Controllers\mapahospitalController;
+
 use App\Models\incluir_mapa_p2;
+use App\Models\mapahospital;
+
+
+
+
 
 
 
@@ -144,16 +151,32 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
     <b> CPF do Usuário:</b> {{$t2->cpfUsuarioSistema}}<br>
     <b> Macro:</b> {{$t->macro}}<br>
 
+    <?php 
 
+$tabelap3 = mapahospital::all();              
+echo  $itensP = mapahospital::where('idp3',$t2->id)->count();
+       
+
+                if ($itensP==0) { ?>
                     
     <a class="btn btn-info" href="{{ url('mapahosp',$t2->id) }}">Inserir observação</a>              
 
+    <?php  } ?>
+
+
+    
   </td>
     </tr>
   </tbody>
 </table>
 
 @endforeach
+
+
+
+
+
+
 
 
 
