@@ -32,9 +32,7 @@ if ($itensP > 0){
                         </div>
                         </div>
                         </div>
-
-                          
-
+                       
     
     <div class="container">
     <div class="row justify-content-center">
@@ -146,8 +144,6 @@ if ($itensP > 0){
          
 
 
-
-
                     <!-- usuario -->
                     <div class="form-group row">
                             <label for="usuario" class="col-md-4 col-form-label text-md-right">{{ __('Usuario ') }}</label>
@@ -160,9 +156,6 @@ if ($itensP > 0){
                                 @enderror
                             </div>
                        </div>
-
-
-
 
                  
 

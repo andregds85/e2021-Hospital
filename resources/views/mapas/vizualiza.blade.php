@@ -8,10 +8,6 @@ use App\Models\mapahospital;
 
 
 
-
-
-
-
 $tabela = mapas::all(); 
 $itensP = mapas::where('id',$id)->get(); 
 
@@ -159,7 +155,7 @@ echo  $itensP = mapahospital::where('idp3',$t2->id)->count();
 
                 if ($itensP==0) { ?>
                     
-    <a class="btn btn-info" href="{{ url('mapahosp',$t2->id) }}">Inserir observação</a>              
+    <a class="btn btn-info" href="{{ url('mapahosp',$t2->id) }}">Inserir Complemento no Mapa</a>              
 
     <?php  } ?>
 
