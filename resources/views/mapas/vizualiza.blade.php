@@ -2,11 +2,11 @@
 use App\Models\mapas;
 use App\Http\Controllers\MapasController;
 use App\Http\Controllers\mapahospitalController;
+use App\Http\Controllers\PacienteController;
 
 use App\Models\incluir_mapa_p2;
 use App\Models\mapahospital;
-
-
+use App\Models\Pacientes;
 
 $tabela = mapas::all(); 
 $itensP = mapas::where('id',$id)->get(); 
@@ -14,6 +14,10 @@ $itensP = mapas::where('id',$id)->get();
 
 $tabelap2 = incluir_mapa_p2::all(); 
 $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get(); 
+
+
+$tab=$tabela = pacientes::all(); 
+
 
 
 ?>
@@ -74,7 +78,7 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
           <b>Macro:</b>{{$t->macro }}<br>
            <b>Hospital: </b> {{$t->categoria_id }}<br>
 
-            <?php $hosptb=$t->categoria_id; ?>
+           <?php $hosptb=$t->categoria_id; ?>
            <?php $hospUsr=Auth::user()->categorias_id; 
            
                   if($hosptb==$hospUsr){
@@ -121,6 +125,7 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
 @foreach ($itensP2  as $t2)
 
 
+
 <table class="table table-bordered">
   <tbody>
     <tr>
@@ -131,34 +136,47 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
 </table>
 
 
+
 <table class="table table-bordered">
   <tbody>
     <tr>
       <td><b>Id do Mapa:</b>{{$t2->idMapa }} <br>
+
            <b>Id do Paciente:</b>{{$t2->idPaciente }}<br>
-           <b>Código da Solicitação: </b> {{$t2->codSolicitacao }}<br>
-           <b>CNS:</b>{{$t2->cns }}<br>
-           <b>Municipio:</b>{{$t2->municipio }}<br>
-     <b>Usuario do Sistema: </b> {{$t2->usuarioSistema }}<br>
+
+          <?php
+
+        
+          $pacid = pacientes::where('id',$t2->idPaciente)->get(); 
+            
+         ?>           
+
+
+            @foreach ($pacid  as $t3)
+    
+                  
+
+           <b>Código da Solicitação: </b> {{$t3->solicitacao }}<br>
+           <b>CNS:</b>{{$t3->cns }}<br>
+           <b>Municipio:</b>{{$t3->municipio }}<br>
+     <b>Nome: </b> {{$t3->nomedousuario }}<br>
+
      </td>
      <td>
    
-    <b> Nome do Usuário: </b> {{$t2->nomeUsuario}}<br>
-    <b> CPF do Usuário:</b> {{$t2->cpfUsuarioSistema}}<br>
     <b> Macro:</b> {{$t->macro}}<br>
 
     <?php 
 
-$tabelap3 = mapahospital::all();              
+      $tabelap3 = mapahospital::all();              
 echo  $itensP = mapahospital::where('idp3',$t2->id)->count();
        
 
-                if ($itensP==0) { ?>
-                    
-    <a class="btn btn-info" href="{{ url('mapahosp',$t2->id) }}">Inserir Complemento no Mapa</a>              
+   if ($itensP==0) { ?>
+                   
+    <a class="btn btn-info" href="{{ url('mapahosp',base64_encode($t2->id))}}">Inserir Complemento no Mapa</a>              
 
     <?php  } ?>
-
 
     
   </td>
@@ -168,15 +186,7 @@ echo  $itensP = mapahospital::where('idp3',$t2->id)->count();
 
 @endforeach
 
-
-
-
-
-
-
-
-
-
+@endforeach
 
 
 
@@ -194,6 +204,8 @@ echo  $itensP = mapahospital::where('idp3',$t2->id)->count();
  
 
     </html>
+
+
 
 
 

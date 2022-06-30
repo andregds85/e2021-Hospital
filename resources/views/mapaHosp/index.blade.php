@@ -1,13 +1,25 @@
 @extends('limpo.app')
 @section('content')
 <?php 
+
 $id;
+
+$pid=base64_decode($id);
+
+
+
+
+
+
+
+
+
 
 use App\Models\mapahospital;
 use App\Http\Controllers\mapahospitalController;
 
 $tabelap3 = mapahospital::all();              
-$itensP = mapahospital::where('idp3',$id)->count();
+$itensP = mapahospital::where('idp3',$pid)->count();
        
 if ($itensP > 0){
     session()->flush(); 
@@ -47,7 +59,7 @@ if ($itensP > 0){
                      <div class="form-group row">
                             <label for="idp3" class="col-md-4 col-form-label text-md-right">{{ __('ID do Mapa ') }}</label>
                             <div class="col-md-6">
-                            <input id="idp3" type="text" class="form-control @error('idp3') is-invalid @enderror" name="idp3"  value="<?php echo $id; ?>" required autocomplete="idp3" readonly>
+                            <input id="idp3" type="text" class="form-control @error('idp3') is-invalid @enderror" name="idp3"  value="<?php echo $pid; ?>" required autocomplete="idp3" readonly>
                                 @error('idp3')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
