@@ -18,10 +18,27 @@ class mapahospitalController extends Controller
        $this->middleware('permission:Hospital-delete', ['only' => ['destroy']]);
   }
 
-    public function show($id)
-    {
+
+
+  
+  public function index()
+  {          
+      
+            return view('mapaHosp.index'); 
+
+  }
+
+
+
+
+
+
+    public function show()
+    {          
+          /*
          return view('mapaHosp.index',['id'=>$id]); 
-     
+               */
+
     }
 
 

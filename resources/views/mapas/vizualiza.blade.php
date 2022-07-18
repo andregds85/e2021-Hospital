@@ -8,6 +8,7 @@ use App\Models\incluir_mapa_p2;
 use App\Models\mapahospital;
 use App\Models\Pacientes;
 
+
 $tabela = mapas::all(); 
 $itensP = mapas::where('id',$id)->get(); 
 
@@ -17,8 +18,6 @@ $itensP2 =  incluir_mapa_p2::where('idMapa',$id)->get();
 
 
 $tab=$tabela = pacientes::all(); 
-
-
 
 ?>
 
@@ -154,17 +153,27 @@ $tab=$tabela = pacientes::all();
 
             @foreach ($pacid  as $t3)
     
-                  
-
+              
            <b>Código da Solicitação: </b> {{$t3->solicitacao }}<br>
            <b>CNS:</b>{{$t3->cns }}<br>
            <b>Municipio:</b>{{$t3->municipio }}<br>
      <b>Nome: </b> {{$t3->nomedousuario }}<br>
-
      </td>
      <td>
    
     <b> Macro:</b> {{$t->macro}}<br>
+
+
+<?php 
+$v1=$t2->idPaciente;
+$v2=$t2->idMapa;
+?>
+
+
+
+
+
+
 
     <?php 
 
@@ -174,8 +183,14 @@ echo  $itensP = mapahospital::where('idp3',$t2->id)->count();
 
    if ($itensP==0) { ?>
                    
-    <a class="btn btn-info" href="{{ url('mapahosp',base64_encode($t2->id))}}">Inserir Complemento no Mapa</a>              
 
+<a class="btn btn-info" href="{{ url('recebe', ['v1' => $v1, 'v2' => $v2]) }}">Inserir Complemento no Mapa</a>
+
+
+
+    <!--
+    <a class="btn btn-info" href="{{ url('mapahosp',base64_encode($t2->id))}}">Inserir Complemento no Mapa</a>              
+   -->
     <?php  } ?>
 
     

@@ -3,16 +3,7 @@
 <?php 
 
 $id;
-
 $pid=base64_decode($id);
-
-
-
-
-
-
-
-
 
 
 use App\Models\mapahospital;

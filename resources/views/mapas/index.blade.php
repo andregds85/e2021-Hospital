@@ -55,7 +55,7 @@ $itens = mapas::where('categoria_id',$hospUsr)->get();
 	        <td>
 
                 <form action="{{ route('mapas.destroy',$mapa->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('mapas.show',$mapa->id) }}">Mostrar</a>
+                    <a class="btn btn-info" href="{{ route('mapas.show',$mapa->id,) }}">Mostrar</a>
                <?php /*                                         
                     @csrf
                     @method('DELETE')
@@ -69,7 +69,6 @@ $itens = mapas::where('categoria_id',$hospUsr)->get();
     </table>
 
 
-    {!! $mapas->links() !!}
     {!! $mapas->links() !!}
 
 @endsection

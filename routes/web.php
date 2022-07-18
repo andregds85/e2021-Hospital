@@ -19,6 +19,8 @@ use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\MedicoReguladorController;
 use App\Http\Controllers\obsMapaP2sController;
 use App\Http\Controllers\mapahospitalController;
+use App\Http\Controllers\recebeController;
+
 
 
 
@@ -56,6 +58,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('regulador', MedicoReguladorController::class);
     Route::resource('observacao', obsMapaP2sController::class);
     Route::resource('mapahosp', mapahospitalController::class);
+    Route::get('/recebe/{v1}/{v2?}', [recebeController::class,'index']);
+
 
 
     
