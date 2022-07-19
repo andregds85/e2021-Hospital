@@ -169,12 +169,6 @@ $v1=$t2->idPaciente;
 $v2=$t2->idMapa;
 ?>
 
-
-
-
-
-
-
     <?php 
 
       $tabelap3 = mapahospital::all();              
@@ -184,7 +178,7 @@ echo  $itensP = mapahospital::where('idp3',$t2->id)->count();
    if ($itensP==0) { ?>
                    
 
-<a class="btn btn-info" href="{{ url('recebe', ['v1' => $v1, 'v2' => $v2]) }}">Inserir Complemento no Mapa</a>
+<a class="btn btn-info" href="{{ url('recebe', ['v1' =>Crypt::encrypt($v1), 'v2' => Crypt::encrypt($v2)]) }}">Inserir Complemento no Mapa</a>
 
 
 
