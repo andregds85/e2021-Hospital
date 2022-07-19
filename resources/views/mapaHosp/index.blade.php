@@ -12,6 +12,11 @@ echo $idM=$_SESSION['v2'];
 echo "<br>";
 
 
+echo "ID da Etapa :";
+echo $idE=$_SESSION['v3'];
+echo "<br>";
+
+
 use App\Models\mapahospital;
 use App\Http\Controllers\mapahospitalController;
 

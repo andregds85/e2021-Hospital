@@ -58,7 +58,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('regulador', MedicoReguladorController::class);
     Route::resource('observacao', obsMapaP2sController::class);
     Route::resource('mapahosp', mapahospitalController::class);
-    Route::get('/recebe/{v1}/{v2?}', [recebeController::class,'index']);
+    Route::get('/recebe/{v1}/{v2}/{v3?}', [recebeController::class,'index']);
 
 
 

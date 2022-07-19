@@ -24,6 +24,12 @@
                 echo $dv2;
                 $_SESSION['v2'] = $dv2;
                 echo "<br>";
+
+
+                echo "ID da Etapa :";    
+                $dv3=Crypt::decrypt($v3);    
+                echo $dv3;
+                $_SESSION['v3'] = $dv3;
                 echo "<br>";
                 echo "<br>";
                 echo "<br>";
@@ -35,13 +41,8 @@
                 echo "<br>";
                 echo "<br>";
                 echo "OBS PARA FAZER AGORA APARTIR DAQUI GRAVAR OS DOIS ID EM SEÇÃO E APLICAR CRIPTOGRAFIA";
-     
                 echo redirect()->route('mapahosp.index');
-
                 ?>
-
-
-
 
 
 

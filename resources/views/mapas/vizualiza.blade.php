@@ -69,7 +69,6 @@ $tab=$tabela = pacientes::all();
 </table>
 
 
-
   <table class="table table-bordered">
   <tbody>
     <tr>
@@ -87,8 +86,8 @@ $tab=$tabela = pacientes::all();
                    session()->flush();
 
                   }
-           
-           
+        
+          
            
            ?> 
 
@@ -167,6 +166,8 @@ $tab=$tabela = pacientes::all();
 <?php 
 $v1=$t2->idPaciente;
 $v2=$t2->idMapa;
+$v3=$t2->id;
+
 ?>
 
     <?php 
@@ -178,7 +179,7 @@ echo  $itensP = mapahospital::where('idp3',$t2->id)->count();
    if ($itensP==0) { ?>
                    
 
-<a class="btn btn-info" href="{{ url('recebe', ['v1' =>Crypt::encrypt($v1), 'v2' => Crypt::encrypt($v2)]) }}">Inserir Complemento no Mapa</a>
+<a class="btn btn-info" href="{{ url('recebe', ['v1' =>Crypt::encrypt($v1), 'v2' => Crypt::encrypt($v2),'v3' => Crypt::encrypt($v3)]) }}">Inserir Complemento no Mapa</a>
 
 
 
