@@ -55,9 +55,9 @@ $itensP = mapahospital::where('idp3',$idM)->count();
 
                   <!-- idP3 -->
                      <div class="form-group row">
-                            <label for="idp3" class="col-md-4 col-form-label text-md-right">{{ __('ID do Mapa ') }}</label>
+                            <label for="idp3" class="col-md-4 col-form-label text-md-right">{{ __('ID da Etapa ') }}</label>
                             <div class="col-md-6">
-                            <input id="idp3" type="text" class="form-control @error('idp3') is-invalid @enderror" name="idp3"  value="<?php   echo  $idM;    ?>" required autocomplete="idp3" readonly>
+                            <input id="idp3" type="text" class="form-control @error('idp3') is-invalid @enderror" name="idp3"  value="<?php   echo  $idE;    ?>" required autocomplete="idp3" readonly>
                                 @error('idp3')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -151,7 +151,43 @@ $itensP = mapahospital::where('idp3',$idM)->count();
                                 @enderror
                             </div>
                            </div>
-         
+
+
+                 
+                   <!-- idMapa -->
+                     <div class="form-group row">
+                            <label for="idMapa" class="col-md-4 col-form-label text-md-right">{{ __('ID do Mapa ') }}</label>
+                            <div class="col-md-6">
+                            <input id="idMapa" type="text" class="form-control @error('idMapa') is-invalid @enderror" name="idMapa"  value="<?php   echo  $idM;    ?>" required autocomplete="idMapa" readonly>
+                                @error('idMapa')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>        
+
+
+
+                        <!-- Id Paciente -->
+                          <div class="form-group row">
+                            <label for="idPaciente" class="col-md-4 col-form-label text-md-right">{{ __('ID do Paciente ') }}</label>
+                            <div class="col-md-6">
+                            <input id="idPaciente" type="text" class="form-control @error('idPaciente') is-invalid @enderror" name="idPaciente"  value="<?php   echo  $idP;    ?>" required autocomplete="idPaciente" readonly>
+                                @error('idPaciente')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>        
+
+
+
+
+
+
+
 
 
                     <!-- usuario -->

@@ -15,6 +15,8 @@ class mapahospital extends Model
         'dataCirurgia',
         'obsHospital',
         'realizou',
+        'idMapa',
+        'idPaciente',
         'usuario',
       ];
 }
