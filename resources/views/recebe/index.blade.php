@@ -19,9 +19,6 @@
                 echo "<br>";
 
 
-
-
-
                 echo "ID do Mapa :";    
                 $dv2=Crypt::decrypt($v2);    
                 echo $dv2;
@@ -39,8 +36,7 @@
                 echo "<br>";
                 echo "OBS PARA FAZER AGORA APARTIR DAQUI GRAVAR OS DOIS ID EM SEÇÃO E APLICAR CRIPTOGRAFIA";
      
-      
-
+                echo redirect()->route('mapahosp.index');
 
                 ?>
 
